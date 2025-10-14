@@ -6,7 +6,7 @@ pipeline {
         // ===== FRONTEND BUILD =====
         stage('Build Frontend') {
             steps {
-                dir('itemreactapp') {
+                dir('ITEM-FRONTEND/itemreactapp') {
                     bat 'npm install'
                     bat 'npm run build'
                 }
@@ -21,7 +21,7 @@ pipeline {
                     rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\itemreactapi"
                 )
                 mkdir "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\itemreactapi"
-                xcopy /E /I /Y "ProjectReact\\dist\\*" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\itemreactapi\\"
+                xcopy /E /I /Y "ITEM-FRONTEND\\itemreactapp\\dist\\*" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\itemreactapi\\"
                 '''
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         // ===== BACKEND BUILD =====
         stage('Build Backend') {
             steps {
-                dir('ItemSpringBootApp') {
+                dir('ITEM-BACKEND/ItemSpringBootApp') {
                     bat 'mvn clean package -DskipTests'
                 }
             }
@@ -45,7 +45,7 @@ pipeline {
                 if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\springbootItemapi" (
                     rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\springbootItemapi"
                 )
-                copy "ProjectSpringBoot\\target\\springbootItemapi.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\springbootItemapi.war"
+                copy "ITEM-BACKEND\\ItemSpringBootApp\\target\\springbootItemapi.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\springbootItemapi.war"
                 '''
             }
         }
