@@ -1,0 +1,177 @@
+/* 🌈 Layout Container */
+.student-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f0ff 100%);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.student-container h2 {
+  text-align: center;
+  color: #0056b3;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.student-container h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+  border-left: 5px solid #007bff;
+  padding-left: 10px;
+  font-weight: 500;
+}
+
+/* 🧩 Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* 🧠 Buttons */
+.btn-group {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-blue,
+.btn-gray {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.btn-blue:hover {
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  transform: translateY(-2px);
+}
+
+.btn-gray {
+  background: #adb5bd;
+  color: #fff;
+}
+
+.btn-gray:hover {
+  background: #868e96;
+  transform: translateY(-2px);
+}
+
+/* 💬 Message Banner */
+.message-banner {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-banner.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-left: 6px solid #198754;
+}
+
+.message-banner.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border-left: 6px solid #dc3545;
+}
+
+/* 📊 Table Section */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background-color: #f6f8ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* 🧾 Action Buttons inside table */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.action-buttons .btn-blue {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+  .student-container {
+    padding: 20px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
