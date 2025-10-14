@@ -6,7 +6,7 @@ pipeline {
         // ===== FRONTEND BUILD =====
         stage('Build Frontend') {
             steps {
-                dir('ProjectReact') {
+                dir('itemreactapp') {
                     bat 'npm install'
                     bat 'npm run build'
                 }
@@ -29,7 +29,7 @@ pipeline {
         // ===== BACKEND BUILD =====
         stage('Build Backend') {
             steps {
-                dir('ProjectSpringBoot') {
+                dir('ItemSpringBootApp') {
                     bat 'mvn clean package -DskipTests'
                 }
             }
