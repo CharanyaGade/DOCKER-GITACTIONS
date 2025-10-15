@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./ITEM-BACKEND/ItemSpringBootApp
-          file: ./ITEM-BACKEND/backend.Dockerfile
+          file: ./ITEM-BACKEND/ItemSpringBootApp/backend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/item-backend:latest
 
@@ -35,6 +35,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./ITEM-FRONTEND/itemreactapp
-          file: ./ITEM-FRONTEND/frontend.dockerfile
+          file: ./ITEM-FRONTEND/itemreactapp/frontend.dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/item-frontend:latest
